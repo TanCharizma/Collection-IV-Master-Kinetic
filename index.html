@@ -248,15 +248,30 @@
         <span class="modal-nav modal-prev">&#10094;</span>
         <img class="modal-content" id="img01">
         <span class="modal-nav modal-next">&#10095;</span>
+        <div class="modal-caption" id="imageModalCaption" aria-hidden="true">
+            <p class="modal-caption__kicker" id="imageModalCaptionKicker"></p>
+            <p class="modal-caption__text">
+                <span lang="en" id="imageModalCaptionEn"></span>
+                <span lang="th" id="imageModalCaptionTh"></span>
+            </p>
+        </div>
+        <button type="button" class="modal-fullscreen-toggle" id="imageModalFullscreenToggle" aria-pressed="false">
+            <span lang="en" id="imageModalFullscreenToggleEn">Fullscreen</span>
+            <span lang="th" id="imageModalFullscreenToggleTh">เต็มจอ</span>
+        </button>
+        <button type="button" class="modal-caption-toggle" id="imageModalCaptionToggle" aria-pressed="true">
+            <span lang="en" id="imageModalCaptionToggleEn">Captions: On</span>
+            <span lang="th" id="imageModalCaptionToggleTh">คำบรรยาย: เปิด</span>
+        </button>
     </div>
 
     <!-- Dedicated Comp Card Modal -->
     <div id="compCardModal" class="modal" role="dialog" aria-modal="true" aria-label="Comp Card">
         <img class="modal-content" id="compCardImg" alt="Client Comp Card" style="max-height: 80vh;">
-        <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 2001; text-align: center; width: 100%;">
-            <a href="#" id="compCardDownload" download="Comp_Card" style="display: inline-block; background: var(--bg); color: var(--text); padding: 12px 24px; font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; border: 1px solid var(--border-subtle); text-decoration: none; transition: opacity 0.3s ease;">
-                <span lang="en">Download PDF</span>
-                <span lang="th">ดาวน์โหลด PDF</span>
+        <div class="comp-card-modal-note">
+            <a href="#" id="compCardDownload" download="Comp_Card.png" class="btn-bold">
+                <span lang="en">Download Comp Card</span>
+                <span lang="th">ดาวน์โหลดคอมพ์การ์ด</span>
             </a>
         </div>
     </div>
