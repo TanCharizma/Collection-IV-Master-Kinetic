@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isBookingPage) pageTitle = "Booking | ";
         document.title = pageTitle + window.CLIENT_CONFIG.name;
         
-        if (document.getElementById('clientNameHero')) document.getElementById('clientNameHero').textContent = window.CLIENT_CONFIG.name;
+        const heroName = document.getElementById('clientNameHero');
+        if (heroName) {
+            heroName.textContent = window.CLIENT_CONFIG.name;
+            heroName.setAttribute('data-text', window.CLIENT_CONFIG.name);
+        }
         if (document.getElementById('taglineEn')) document.getElementById('taglineEn').textContent = window.CLIENT_CONFIG.taglineEn;
         if (document.getElementById('taglineTh')) document.getElementById('taglineTh').textContent = window.CLIENT_CONFIG.taglineTh;
         
@@ -113,7 +117,7 @@ if (splashScreen) {
         setTimeout(() => {
             document.body.style.overflow = ''; // Unlock scrolling
             triggerHeroEntrance();
-        }, 400); // Trigger hero text reveal exactly halfway through the splash screen fade-out
+        }, 820); // Reveal hero content only after the splash has visually cleared
     });
 } else {
     heroImageLoad.then(triggerHeroEntrance);
@@ -801,7 +805,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Add magnetic hover effect for all interactive elements
-        const interactiveElements = 'a, button, .dropdown, img, .theme-toggle, .lang-switch span, .modal-nav';
+        const interactiveElements = 'a, button, .dropdown, img:not(.brand-logo), .theme-toggle, .lang-switch span, .modal-nav';
         
         document.addEventListener('mouseover', (e) => {
             let target = e.target;

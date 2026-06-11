@@ -11,6 +11,7 @@ window.CLIENT_CONFIG = {
     // 2. Roles / Taglines
     taglineEn: "Model · Creative Director",
     taglineTh: "นางแบบ · ครีเอทีฟไดเรกเตอร์",
+    splashCaption: "Kinetic Portfolio",
 
     // 3. Measurements
     measurements: {

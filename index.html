@@ -57,13 +57,38 @@
 
     <!-- Splash Screen -->
     <div id="splash-screen" class="splash-screen">
-        <div class="splash-logo" id="splashClientName"></div>
+        <div class="splash-stack">
+            <div class="splash-logo" id="splashClientName"></div>
+            <div class="splash-caption" id="splashCaption"></div>
+        </div>
+        <script>
+            const splashLogo = document.getElementById('splashClientName');
+            if (splashLogo && window.CLIENT_CONFIG) {
+                splashLogo.textContent = window.CLIENT_CONFIG.name;
+                document.fonts.ready.then(() => {
+                    splashLogo.style.animation = 'splashKinetic 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+                    const splashCaption = document.getElementById('splashCaption');
+                    if (splashCaption) {
+                        splashCaption.textContent = window.CLIENT_CONFIG.splashCaption || '';
+                        splashCaption.style.animation = 'splashCaptionKinetic 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+                    }
+                });
+            }
+        </script>
     </div>
 
     <script src="nav.js"></script>
     <header class="hero" id="hero">
         <!-- Change the background image URL right here for new clients -->
         <div class="hero-bg" style="background-image: url('image/hero/hero.webp');"></div>
+        <div class="hero-motion-system" aria-hidden="true">
+            <div class="motion-strip strip-left"></div>
+            <div class="motion-strip strip-right"></div>
+            <div class="motion-frame-label frame-top">Motion Study / 001</div>
+            <div class="motion-frame-label frame-side">Sequence 04</div>
+            <div class="motion-rail rail-horizontal"></div>
+            <div class="motion-rail rail-vertical"></div>
+        </div>
         <div class="hero-content">
             <h1 class="reveal" id="clientNameHero"></h1>
             <p class="hero-tagline reveal delay-1">
