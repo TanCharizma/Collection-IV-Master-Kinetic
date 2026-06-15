@@ -182,6 +182,7 @@ document.querySelectorAll('.reveal:not(.hero .reveal)').forEach(el => revealObse
 
 // Subtle Parallax & Zoom Effect for Hero
 const heroContent = document.querySelector('.hero-content');
+const scrollHint = document.querySelector('.scroll-hint');
 const backToTop = document.querySelector('.back-to-top');
 
 // Cache viewport height to strictly prevent layout thrashing on scroll
@@ -294,6 +295,11 @@ window.addEventListener('scroll', () => {
                 if (heroContent) {
                     const opacity = 1 - (scrollOffset / (vh * 0.6));
                     heroContent.style.opacity = Math.max(0, opacity);
+                }
+
+                if (scrollHint) {
+                    const opacity = 1 - (scrollOffset / (vh * 0.6));
+                    scrollHint.style.opacity = Math.max(0, opacity);
                 }
             }
             ticking = false;
