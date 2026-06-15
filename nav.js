@@ -26,6 +26,8 @@
 
     const isInternalNav = sessionStorage.getItem('internalNav_Kinetic') === 'true';
     sessionStorage.removeItem('internalNav_Kinetic');
+    const pendingAnchor = sessionStorage.getItem('pendingAnchor_Kinetic');
+    sessionStorage.removeItem('pendingAnchor_Kinetic');
 
     const startClass = (!isHomePage || isInternalNav) ? 'start-covered' : '';
 
@@ -342,8 +344,9 @@
     // Dynamic Layout-Aware Hash Navigation Fix (Homepage Only)
     if (isHomePage) {
         window.addEventListener('load', () => {
-            if (window.location.hash) {
-                glideToAnchor(window.location.hash, isInternalNav ? 420 : 160);
+            const targetHash = pendingAnchor || window.location.hash;
+            if (targetHash) {
+                glideToAnchor(targetHash, isInternalNav || pendingAnchor ? 420 : 160);
             }
         }, { once: true });
     }
@@ -393,6 +396,12 @@
 
             // Store navigation intent for the next page load
             sessionStorage.setItem('internalNav_Kinetic', 'true');
+            const hashIndex = href.indexOf('#');
+            let navigationHref = href;
+            if (hashIndex !== -1 && targetPath === 'index.html') {
+                sessionStorage.setItem('pendingAnchor_Kinetic', href.substring(hashIndex));
+                navigationHref = href.substring(0, hashIndex) || 'index.html';
+            }
 
             // Close mobile menu if it's open so it doesn't glitch during transition
             if (navElement && navElement.classList.contains('nav-open')) {
@@ -412,7 +421,7 @@
             });
 
             // Wait for curtain to fully cover the screen, then navigate
-            setTimeout(() => window.location.href = href, 500);
+            setTimeout(() => window.location.href = navigationHref, 500);
         });
 
         // Failsafe for iOS Swipe-Back gesture (BFCache reset)
