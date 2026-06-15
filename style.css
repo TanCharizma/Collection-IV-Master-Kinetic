@@ -1829,13 +1829,18 @@ footer {
     /* Grid Resets */
     .featured-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } /* 2 columns for less scrolling */
     
-    /* Stable two-column grid for mobile portfolio order */
+    /* Stable two-column grid while preserving the original portfolio order */
     .full-grid { 
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
     } 
-    .portfolio-column, .masonry-col { display: contents; } 
+    .portfolio-column,
+    .masonry-col {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
     .full-grid img { margin-bottom: 0; width: 100%; }
 
     /* Measurements */
