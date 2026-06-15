@@ -650,14 +650,14 @@ nav.on-hero:not(.scrolled) .theme-toggle {
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border: 1px solid rgba(226, 230, 236, 0.48);
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid rgba(226, 230, 236, 0.36);
     color: var(--kinetic-silver);
     font-family: var(--sans);
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 800;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.22em;
     line-height: 1;
     text-transform: uppercase;
     opacity: 0;
@@ -675,9 +675,9 @@ nav.on-hero:not(.scrolled) .theme-toggle {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -26px;
+    bottom: -23px;
     width: 1px;
-    height: 18px;
+    height: 15px;
     background: currentColor;
     transform-origin: top center;
     animation: scrollHintPulse 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
@@ -688,8 +688,8 @@ nav.on-hero:not(.scrolled) .theme-toggle {
     position: absolute;
     right: -8px;
     top: -8px;
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-top: 1px solid currentColor;
     border-right: 1px solid currentColor;
     opacity: 0.7;
@@ -700,10 +700,10 @@ nav.on-hero:not(.scrolled) .theme-toggle {
 }
 
 .scroll-hint__count {
-    padding-left: 10px;
-    border-left: 1px solid rgba(226, 230, 236, 0.38);
+    padding-left: 8px;
+    border-left: 1px solid rgba(226, 230, 236, 0.3);
     font-variant-numeric: tabular-nums;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
 }
 
 @keyframes scrollHintPulse {
@@ -1733,19 +1733,19 @@ footer {
     .scroll-hint {
         right: 18px;
         bottom: calc(28px + env(safe-area-inset-bottom));
-        gap: 8px;
-        padding: 8px 9px;
-        font-size: 7px;
-        letter-spacing: 0.2em;
+        gap: 7px;
+        padding: 7px 8px;
+        font-size: 6.5px;
+        letter-spacing: 0.18em;
     }
 
     .scroll-hint::before {
-        bottom: -21px;
-        height: 14px;
+        bottom: -18px;
+        height: 12px;
     }
 
     .scroll-hint__count {
-        padding-left: 8px;
+        padding-left: 7px;
     }
 
     /* Grids */
