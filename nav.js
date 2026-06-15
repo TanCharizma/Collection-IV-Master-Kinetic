@@ -343,7 +343,7 @@
     if (isHomePage) {
         window.addEventListener('load', () => {
             if (window.location.hash) {
-                scrollToAnchor(window.location.hash, 'auto');
+                glideToAnchor(window.location.hash, isInternalNav ? 420 : 160);
             }
         }, { once: true });
     }

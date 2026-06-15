@@ -1599,7 +1599,7 @@ footer {
     nav.nav-open .mobile-toggle span:nth-child(1) { transform: translateY(4.5px) rotate(45deg); }
     nav.nav-open .mobile-toggle span:nth-child(2) { transform: translateY(-4.5px) rotate(-45deg); }
 
-    .dropdown { width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .dropdown { width: auto; display: flex; flex-direction: column; align-items: center; }
 
     /* Editorial Mobile Typography */
     .nav-links > a, .dropdown-trigger {
@@ -1611,7 +1611,8 @@ footer {
         color: var(--text);
         display: flex !important;
         justify-content: center;
-        width: 100%;
+        width: auto;
+        padding: 6px 4px;
     }
 
     /* Animation for links when menu opens */
@@ -1645,7 +1646,7 @@ footer {
         padding: 8px 0 16px 0;
     }
 
-    .dropdown-content a { font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.3em !important; opacity: 0.4; padding: 4px 0 !important; transform: none !important; transition-delay: 0s !important; }
+    .dropdown-content a { font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.3em !important; opacity: 0.4; padding: 4px 2px !important; transform: none !important; transition-delay: 0s !important; }
     .dropdown-content a.active {
         opacity: 1 !important;
         color: var(--text) !important;
@@ -1721,7 +1722,7 @@ footer {
 
     .strip-right {
         right: 14px;
-        background-position: 54% 6%;
+        background-position: 49% 6%;
     }
 
     .frame-top {
@@ -1804,7 +1805,7 @@ footer {
     }
 
     .strip-right {
-        background-position: 53% 5%;
+        background-position: 48% 5%;
     }
 
     .hero.loaded .motion-strip {
