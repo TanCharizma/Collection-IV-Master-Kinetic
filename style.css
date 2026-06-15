@@ -1417,15 +1417,15 @@ h3.reveal {
 
 @media (max-width: 768px) {
     .modal {
-        --modal-mobile-toolbar-clearance: clamp(148px, 18vh, 220px);
+        --modal-mobile-toolbar-clearance: clamp(82px, 10vh, 124px);
     }
 
     .modal-content {
-        max-height: calc(100svh - 32px);
+        max-height: calc(100svh - 96px);
     }
 
     .modal.has-caption .modal-content {
-        max-height: calc(100svh - var(--modal-mobile-toolbar-clearance) - 72px);
+        max-height: calc(100svh - var(--modal-mobile-toolbar-clearance) - 56px);
     }
 
     .modal.is-immersive .modal-content {
@@ -1444,7 +1444,7 @@ h3.reveal {
     .modal-caption {
         left: 16px;
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)));
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)));
         max-width: none;
         max-height: min(24vh, 190px);
         padding: 14px 16px;
@@ -1456,7 +1456,7 @@ h3.reveal {
 
     .modal-caption-toggle {
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)) + 56px);
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + 52px);
         font-size: 9px;
         letter-spacing: 0.18em;
         padding: 10px 12px;
@@ -1464,14 +1464,14 @@ h3.reveal {
 
     .modal-fullscreen-toggle {
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)) + 104px);
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + 94px);
         font-size: 9px;
         letter-spacing: 0.18em;
         padding: 10px 12px;
     }
 
     .modal:not(.has-caption-controls) .modal-fullscreen-toggle {
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)) + 56px);
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)));
     }
 }
 
@@ -1679,10 +1679,22 @@ footer {
 
     nav { padding: 0 24px; }
 
+    .hero {
+        height: 115svh;
+        min-height: 115svh;
+    }
+
+    .hero-bg {
+        top: -6svh;
+        bottom: -15svh;
+        height: auto;
+        background-position: center 0%;
+    }
+
     .hero-content {
         width: 100%;
         text-align: center;
-        transform: translateY(8vh);
+        transform: translateY(9vh);
     }
 
     .hero h1 {
@@ -1704,12 +1716,12 @@ footer {
 
     .strip-left {
         left: 14px;
-        background-position: 38% 9%;
+        background-position: 40% 6%;
     }
 
     .strip-right {
         right: 14px;
-        background-position: 62% 9%;
+        background-position: 54% 6%;
     }
 
     .frame-top {
@@ -1776,7 +1788,7 @@ footer {
     :root { --margin: 24px; }
     
     h1 { font-size: 48px; line-height: 0.9; letter-spacing: -0.04em; } /* Massive and tight for punchy typography */
-    .hero-content { transform: translateY(6vh); }
+    .hero-content { transform: translateY(7vh); }
     .hero h1 { font-size: clamp(54px, 17vw, 78px); }
     .hero-tagline { font-size: 10px; letter-spacing: 0.4em; } /* Tiny and wide to contrast the H1 */
     .page-header { font-size: 36px; margin-bottom: 32px; letter-spacing: -0.04em; } /* Scales down subpage titles */
@@ -1789,6 +1801,10 @@ footer {
     .motion-strip {
         width: 38px;
         height: 34vh;
+    }
+
+    .strip-right {
+        background-position: 53% 5%;
     }
 
     .hero.loaded .motion-strip {
