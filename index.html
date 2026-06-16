@@ -66,11 +66,11 @@
             if (splashLogo && window.CLIENT_CONFIG) {
                 splashLogo.textContent = window.CLIENT_CONFIG.name;
                 document.fonts.ready.then(() => {
-                    splashLogo.style.animation = 'splashKinetic 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+                    splashLogo.style.animation = 'splashMotionStudy 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
                     const splashCaption = document.getElementById('splashCaption');
                     if (splashCaption) {
                         splashCaption.textContent = window.CLIENT_CONFIG.splashCaption || '';
-                        splashCaption.style.animation = 'splashCaptionKinetic 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+                        splashCaption.style.animation = 'splashCaptionMotionStudy 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
                     }
                 });
             }

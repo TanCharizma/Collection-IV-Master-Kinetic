@@ -11,7 +11,7 @@ window.CLIENT_CONFIG = {
     // 2. Roles / Taglines
     taglineEn: "Model · Creative Director",
     taglineTh: "นางแบบ · ครีเอทีฟไดเรกเตอร์",
-    splashCaption: "Kinetic Portfolio",
+    splashCaption: "Motion Study Portfolio",
 
     // 3. Measurements
     measurements: {
@@ -27,8 +27,8 @@ window.CLIENT_CONFIG = {
     },
 
     // 4. Comp Card
-    compCardUrl: "", // Example: "image/Folio-Lab-Compcard Kinetic.webp" (leave blank "" to hide button)
-    compCardDownloadUrl: "", // Example: "image/Folio-Lab-Compcard Kinetic.png"
+    compCardUrl: "", // Example: "image/Folio-Lab-Compcard Motion Study.webp" (leave blank "" to hide button)
+    compCardDownloadUrl: "", // Example: "image/Folio-Lab-Compcard Motion Study.png"
 
     // 5. Image Modal Captions
     // Set showImageCaptions to false to hide captions and the caption toggle everywhere.
@@ -47,7 +47,7 @@ window.CLIENT_CONFIG = {
         },
         "image/highlights/IMG_0470.WEBP": {
             kicker: "Highlights / 03",
-            en: "A kinetic portrait study with clean direction and confident pacing.",
+            en: "A motion-study portrait with clean direction and confident pacing.",
             th: "พอร์ตเทรตเชิงเคลื่อนไหวที่มีทิศทางชัดและจังหวะมั่นใจ."
         },
         "image/highlights/04.webp": {

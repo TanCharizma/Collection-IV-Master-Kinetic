@@ -24,10 +24,10 @@
         document.title = currentTitle + ' | ' + window.CLIENT_CONFIG.name;
     }
 
-    const isInternalNav = sessionStorage.getItem('internalNav_Kinetic') === 'true';
-    sessionStorage.removeItem('internalNav_Kinetic');
-    const pendingAnchor = sessionStorage.getItem('pendingAnchor_Kinetic');
-    sessionStorage.removeItem('pendingAnchor_Kinetic');
+    const isInternalNav = sessionStorage.getItem('internalNav_MotionStudy') === 'true';
+    sessionStorage.removeItem('internalNav_MotionStudy');
+    const pendingAnchor = sessionStorage.getItem('pendingAnchor_MotionStudy');
+    sessionStorage.removeItem('pendingAnchor_MotionStudy');
 
     const startClass = (!isHomePage || isInternalNav) ? 'start-covered' : '';
 
@@ -232,7 +232,7 @@
     };
 
     window.FolioLabScrollToAnchor = glideToAnchor;
-    window.KineticScrollToAnchor = glideToAnchor;
+    window.MotionStudyScrollToAnchor = glideToAnchor;
 
     let menuTouchStartX = 0;
     let menuTouchStartY = 0;
@@ -395,11 +395,11 @@
             e.preventDefault();
 
             // Store navigation intent for the next page load
-            sessionStorage.setItem('internalNav_Kinetic', 'true');
+            sessionStorage.setItem('internalNav_MotionStudy', 'true');
             const hashIndex = href.indexOf('#');
             let navigationHref = href;
             if (hashIndex !== -1 && targetPath === 'index.html') {
-                sessionStorage.setItem('pendingAnchor_Kinetic', href.substring(hashIndex));
+                sessionStorage.setItem('pendingAnchor_MotionStudy', href.substring(hashIndex));
                 navigationHref = href.substring(0, hashIndex) || 'index.html';
             }
 

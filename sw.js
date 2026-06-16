@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kinetic-portfolio-v30';
+const CACHE_NAME = 'motion-study-portfolio-v31';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
