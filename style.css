@@ -1418,6 +1418,9 @@ h3.reveal {
 @media (max-width: 768px) {
     .modal {
         --modal-mobile-toolbar-clearance: clamp(82px, 10vh, 124px);
+        --modal-caption-height: 112px;
+        --modal-control-gap: 8px;
+        --modal-control-step: 46px;
     }
 
     .modal-content {
@@ -1456,7 +1459,7 @@ h3.reveal {
 
     .modal-caption-toggle {
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + 128px);
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + var(--modal-caption-height) + var(--modal-control-gap));
         font-size: 9px;
         letter-spacing: 0.18em;
         padding: 10px 12px;
@@ -1464,7 +1467,7 @@ h3.reveal {
 
     .modal-fullscreen-toggle {
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + 174px);
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + var(--modal-caption-height) + var(--modal-control-gap) + var(--modal-control-step));
         font-size: 9px;
         letter-spacing: 0.18em;
         padding: 10px 12px;
