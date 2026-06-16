@@ -1420,7 +1420,7 @@ h3.reveal {
         --modal-mobile-toolbar-clearance: clamp(82px, 10vh, 124px);
         --modal-caption-height: 112px;
         --modal-control-gap: 8px;
-        --modal-control-step: 46px;
+        --modal-control-step: 39px;
     }
 
     .modal-content {
