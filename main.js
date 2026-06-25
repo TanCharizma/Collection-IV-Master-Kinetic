@@ -745,13 +745,16 @@ const compCardImg = document.getElementById('compCardImg');
 const compCardDownload = document.getElementById('compCardDownload');
 
 if (compCardContainer && compCardBtn && compCardModal && compCardImg && compCardDownload) {
+    const getCompCardTransform = (scale = 1) => {
+        return window.innerWidth <= 768 ? `scale(${scale})` : `translate(-50%, -50%) scale(${scale})`;
+    };
     const closeCompCardModal = () => {
         compCardModal.classList.remove('show-modal');
         unlockScroll();
         setTimeout(() => {
             if (!compCardModal.classList.contains('show-modal')) {
                 compCardImg.style.transition = 'none';
-                compCardImg.style.transform = 'translate(-50%, -50%)';
+                compCardImg.style.transform = getCompCardTransform(1);
                 compCardImg.style.opacity = '1';
             }
         }, 250);
@@ -761,7 +764,14 @@ if (compCardContainer && compCardBtn && compCardModal && compCardImg && compCard
         modalElement: compCardModal,
         dragElement: compCardImg,
         closeModal: closeCompCardModal,
-        ignoreElement: '#compCardDownload'
+        ignoreElement: '#compCardDownload',
+        getRestTransform: () => getCompCardTransform(1),
+        getVerticalDragTransform: (dragY, scale) => window.innerWidth <= 768
+            ? `translateY(${dragY * 0.72}px) scale(${scale})`
+            : `translate(-50%, calc(-50% + ${dragY * 0.72}px)) scale(${scale})`,
+        getDismissTransform: () => window.innerWidth <= 768
+            ? 'translateY(35%) scale(0.96)'
+            : 'translate(-50%, 35%) scale(0.96)'
     });
 
     if (window.CLIENT_CONFIG.compCardUrl && window.CLIENT_CONFIG.compCardUrl.trim() !== "") {
@@ -774,7 +784,7 @@ if (compCardContainer && compCardBtn && compCardModal && compCardImg && compCard
             compCardDownload.download = `${(window.CLIENT_CONFIG.name || 'client').trim().replace(/\s+/g, '-')}-comp-card.${extension}`;
 
             compCardImg.style.transition = 'none';
-            compCardImg.style.transform = 'translate(-50%, -50%) scale(0.95)';
+            compCardImg.style.transform = getCompCardTransform(0.95);
             compCardImg.style.opacity = '0';
 
             compCardModal.classList.add('show-modal');
@@ -784,7 +794,7 @@ if (compCardContainer && compCardBtn && compCardModal && compCardImg && compCard
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
                         compCardImg.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease';
-                        compCardImg.style.transform = 'translate(-50%, -50%) scale(1)';
+                        compCardImg.style.transform = getCompCardTransform(1);
                         compCardImg.style.opacity = '1';
                     });
                 });

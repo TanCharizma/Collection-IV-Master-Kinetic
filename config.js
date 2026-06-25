@@ -48,8 +48,8 @@ window.CLIENT_CONFIG = {
     },
 
     // 5. Comp Card
-    compCardUrl: "", // Example: "image/Folio-Lab-Compcard Motion Study.webp" (leave blank "" to hide button)
-    compCardDownloadUrl: "", // Example: "image/Folio-Lab-Compcard Motion Study.png"
+    compCardUrl: "image/Folio-Lab-Compcard Motion Study.webp", // Example: "image/Folio-Lab-Compcard Motion Study.webp" (leave blank "" to hide button)
+    compCardDownloadUrl: "image/Folio-Lab-Compcard Motion Study.png", // Example: "image/Folio-Lab-Compcard Motion Study.png"
 
     // 6. Image Modal Captions
     // Set showImageCaptions to false to hide captions and the caption toggle everywhere.

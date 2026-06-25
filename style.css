@@ -1707,6 +1707,27 @@ h3.reveal {
     transform: translateX(-50%);
 }
 
+#compCardImg {
+    max-height: 80vh;
+}
+
+.comp-card-modal-note .btn-bold {
+    margin: 0;
+    border-color: rgba(226, 230, 236, 0.88);
+    color: var(--white);
+    background: rgba(13, 13, 13, 0.72);
+    box-shadow: 5px 5px 0 rgba(226, 230, 236, 0.22);
+    backdrop-filter: blur(12px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .comp-card-modal-note .btn-bold:hover {
+        background: var(--white);
+        color: var(--black);
+        border-color: var(--white);
+    }
+}
+
 @media (max-width: 390px) {
     .modal-nav { padding: 20px; font-size: 24px; }
 }
@@ -1732,12 +1753,30 @@ h3.reveal {
         max-height: 100svh;
     }
 
+    #compCardModal {
+        --modal-mobile-toolbar-clearance: clamp(68px, 8vh, 104px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: calc(28px + max(24px, env(safe-area-inset-top))) 18px calc(var(--modal-mobile-toolbar-clearance) + max(54px, env(safe-area-inset-bottom)));
+    }
+
     .comp-card-modal-note {
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(24px, env(safe-area-inset-bottom))) !important;
+        position: static;
+        transform: none;
+        width: auto;
+        text-align: center;
+        margin: 0;
     }
 
     #compCardImg {
-        max-height: calc(100svh - 160px) !important;
+        position: static;
+        max-width: 92vw !important;
+        max-height: calc(100svh - var(--modal-mobile-toolbar-clearance) - 132px) !important;
+        margin: 0;
+        object-fit: contain;
     }
 
     .modal-caption {
