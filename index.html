@@ -109,37 +109,38 @@
     </header>
 
     <!-- SECTION 2: Highlights (4 Images) -->
-    <section id="highlights">
+    <section id="highlights" class="motion-study-section motion-study-section--highlights">
         <div class="container">
-            <p class="section-label reveal">
+            <p class="section-label reveal" data-frame="Frame 002" data-index="Contact Sheet">
                 <span lang="en">Highlights</span>
                 <span lang="th">ไฮไลต์</span>
             </p>
             <div style="grid-column: span 12;">
                 <div class="featured-grid">
-                    <div class="featured-item reveal"><img src="image/highlights/01.webp" alt="Editorial" loading="lazy" decoding="async"></div>
-                    <div class="featured-item reveal"><img src="image/highlights/IMG_1733.webp" alt="Editorial" loading="lazy" decoding="async"></div>
-                    <div class="featured-item reveal"><img src="image/highlights/IMG_0470.WEBP" alt="Editorial" loading="lazy" decoding="async"></div>
-                    <div class="featured-item reveal"><img src="image/highlights/04.webp" alt="Editorial" loading="lazy" decoding="async"></div>
+                    <div class="featured-item reveal" data-frame="Frame 002.1"><img src="image/highlights/01.webp" alt="Editorial" loading="lazy" decoding="async"></div>
+                    <div class="featured-item reveal" data-frame="Frame 002.2"><img src="image/highlights/IMG_1733.webp" alt="Editorial" loading="lazy" decoding="async"></div>
+                    <div class="featured-item reveal" data-frame="Frame 002.3"><img src="image/highlights/IMG_0470.WEBP" alt="Editorial" loading="lazy" decoding="async"></div>
+                    <div class="featured-item reveal" data-frame="Frame 002.4"><img src="image/highlights/04.webp" alt="Editorial" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECTION 2.5: Selected Clients -->
-    <section id="selected-clients" style="padding: 0 0 96px 0;">
+    <section id="selected-clients" class="motion-study-clients">
         <div class="container">
-            <div style="grid-column: span 12; text-align: center;">
-                <h3 class="reveal" style="font-size: 12px; letter-spacing: 0.3em; margin-bottom: 48px; opacity: 0.5; font-weight: 400;">
+            <div class="motion-study-clients__inner">
+                <div class="motion-study-clients__meta reveal" aria-hidden="true">Archive / 005</div>
+                <h3 class="reveal motion-study-clients__heading">
                     <span lang="en">Selected Clients</span>
                     <span lang="th">ลูกค้าที่ร่วมงาน</span>
                 </h3>
-                <div class="reveal delay-1" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: clamp(32px, 6vw, 64px); opacity: 0.5;">
-                    <img src="image/brand_icons/vogue.webp" alt="VOGUE" class="brand-logo" style="height: clamp(16px, 3vw, 20px); width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                    <img src="image/brand_icons/elle.webp" alt="ELLE" class="brand-logo" style="height: clamp(16px, 3vw, 20px); width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                    <img src="image/brand_icons/cartier.webp" alt="CARTIER" class="brand-logo" style="height: clamp(16px, 3vw, 20px); width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                    <img src="image/brand_icons/armani.webp" alt="ARMANI" class="brand-logo" style="height: clamp(16px, 3vw, 20px); width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                    <img src="image/brand_icons/levi.webp" alt="LEVI'S" class="brand-logo" style="height: clamp(16px, 3vw, 20px); width: auto; object-fit: contain;" loading="lazy" decoding="async">
+                <div class="reveal delay-1 motion-study-clients__row">
+                    <img src="image/brand_icons/vogue.webp" alt="VOGUE" class="brand-logo" loading="lazy" decoding="async">
+                    <img src="image/brand_icons/elle.webp" alt="ELLE" class="brand-logo" loading="lazy" decoding="async">
+                    <img src="image/brand_icons/cartier.webp" alt="CARTIER" class="brand-logo" loading="lazy" decoding="async">
+                    <img src="image/brand_icons/armani.webp" alt="ARMANI" class="brand-logo" loading="lazy" decoding="async">
+                    <img src="image/brand_icons/levi.webp" alt="LEVI'S" class="brand-logo" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -148,7 +149,7 @@
     <!-- SECTION 3: Full Portfolio (20 Images) -->
     <section id="portfolio" class="bg-alt">
         <div class="container">
-            <p class="section-label reveal">
+            <p class="section-label reveal" data-frame="Frame 003" data-index="Image Sequence">
                 <span lang="en">Portfolio</span>
                 <span lang="th">ผลงาน</span>
             </p>
@@ -194,25 +195,33 @@
     <!-- SECTION 4: Video Portfolio (2 Videos) -->
     <section id="motion">
         <div class="container">
-            <p class="section-label reveal">
+            <p class="section-label reveal" data-frame="Frame 004" data-index="Motion Tests">
                 <span lang="en">Videos</span>
                 <span lang="th">วิดีโอ</span>
             </p>
             <div style="grid-column: span 12;">
                 <div class="video-grid">
                     <div class="video-item reveal">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0; background-color: var(--surface);">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--text); opacity: 0.4; font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">
-                                <span lang="en">[ Video Placeholder 1 ]</span>
-                                <span lang="th">[ วิดีโอ 1 ]</span>
+                        <div class="motion-video-placeholder">
+                            <div class="motion-video-placeholder__inner">
+                                <span class="motion-video-placeholder__frame">Motion Test / 01</span>
+                                <span class="motion-video-placeholder__play" aria-hidden="true"></span>
+                                <span class="motion-video-placeholder__title" lang="en">Campaign Film</span>
+                                <span class="motion-video-placeholder__title" lang="th">วิดีโอแคมเปญ</span>
+                                <span class="motion-video-placeholder__note" lang="en">Replace with Vimeo, YouTube, or uploaded video embed.</span>
+                                <span class="motion-video-placeholder__note" lang="th">แทนที่ด้วยวิดีโอจาก Vimeo, YouTube หรือไฟล์วิดีโอ</span>
                             </div>
                         </div>
                     </div>
                     <div class="video-item reveal">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0; background-color: var(--surface);">
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--text); opacity: 0.4; font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em;">
-                                <span lang="en">[ Video Placeholder 2 ]</span>
-                                <span lang="th">[ วิดีโอ 2 ]</span>
+                        <div class="motion-video-placeholder">
+                            <div class="motion-video-placeholder__inner">
+                                <span class="motion-video-placeholder__frame">Motion Test / 02</span>
+                                <span class="motion-video-placeholder__play" aria-hidden="true"></span>
+                                <span class="motion-video-placeholder__title" lang="en">Runway Clip</span>
+                                <span class="motion-video-placeholder__title" lang="th">วิดีโอรันเวย์</span>
+                                <span class="motion-video-placeholder__note" lang="en">Use this frame for movement, runway, or behind-the-scenes footage.</span>
+                                <span class="motion-video-placeholder__note" lang="th">ใช้เฟรมนี้สำหรับวิดีโอการเคลื่อนไหว รันเวย์ หรือเบื้องหลัง</span>
                             </div>
                         </div>
                     </div>
@@ -224,7 +233,7 @@
     <!-- SECTION 5: Measurements -->
     <section id="measurements" class="bg-alt">
         <div class="container">
-            <p class="section-label reveal">
+            <p class="section-label reveal" data-frame="Frame 005" data-index="Specs">
                 <span lang="en">Measurements</span>
                 <span lang="th">สัดส่วน</span>
             </p>
@@ -252,23 +261,24 @@
     <!-- SECTION 6: Digitals (4 Images) -->
     <section id="digitals">
         <div class="container">
-            <p class="section-label reveal">
+            <p class="section-label reveal" data-frame="Frame 006" data-index="Natural Light">
                 <span lang="en">Digitals</span>
                 <span lang="th">สแนปช็อต</span>
             </p>
             <div style="grid-column: span 12;">
                 <div class="digitals-grid">
-                    <img src="image/digitals/01.webp" alt="Digital 1" class="reveal" loading="lazy" decoding="async">
-                    <img src="image/digitals/02.webp" alt="Digital 2" class="reveal" loading="lazy" decoding="async">
-                    <img src="image/digitals/03.webp" alt="Digital 3" class="reveal" loading="lazy" decoding="async">
-                    <img src="image/digitals/04.webp" alt="Digital 4" class="reveal" loading="lazy" decoding="async">
+                    <div class="digital-frame reveal" data-frame="Ref 001"><img src="image/digitals/01.webp" alt="Digital 1" loading="lazy" decoding="async"></div>
+                    <div class="digital-frame reveal" data-frame="Ref 002"><img src="image/digitals/02.webp" alt="Digital 2" loading="lazy" decoding="async"></div>
+                    <div class="digital-frame reveal" data-frame="Ref 003"><img src="image/digitals/03.webp" alt="Digital 3" loading="lazy" decoding="async"></div>
+                    <div class="digital-frame reveal" data-frame="Ref 004"><img src="image/digitals/04.webp" alt="Digital 4" loading="lazy" decoding="async"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" id="contact">
-        <h2 class="reveal" style="font-size: clamp(36px, 6vw, 80px);">
+    <section class="cta-section motion-study-cta" id="contact">
+        <span class="motion-study-cta__meta reveal">Final Frame / Booking</span>
+        <h2 class="reveal">
             <span lang="en">Ready to collaborate?</span>
             <span lang="th">พร้อมที่จะร่วมงานกันหรือยัง?</span>
         </h2>

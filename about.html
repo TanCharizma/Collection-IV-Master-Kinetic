@@ -52,7 +52,7 @@
 <body>
 
     <script src="nav.js"></script>
-    <section style="padding-top: 96px; border-top: none;">
+    <section class="motion-study-subpage-hero">
         <div class="container">
             <div style="grid-column: span 12;">
                 <h2 class="page-header reveal">
@@ -61,47 +61,45 @@
                 </h2>
                 <div class="split-layout" style="text-align: left;">
                     <img src="image/about/01.webp" alt="Portrait" class="reveal" loading="lazy">
-                    <div class="bio reveal delay-1">
-                        <p lang="en">Client bio opening. Replace this with a concise statement about presence, point of view, and creative direction.</p>
-                        <p lang="th">ย่อหน้าเปิดประวัติ แทนที่ด้วยคำแนะนำตัวที่กระชับเกี่ยวกับตัวตน มุมมอง และทิศทางสร้างสรรค์</p>
-
-                        <p lang="en">Use this second line for selected campaigns, experience, availability, or the kind of collaborations the client is seeking.</p>
-                        <p lang="th">ใช้ย่อหน้าที่สองสำหรับแคมเปญ ประสบการณ์ ความพร้อมรับงาน หรือรูปแบบงานที่ต้องการร่วมงาน</p>
-                            
-                        <p lang="en">Keep it short, specific, and editorial.</p>
-                        <p lang="th">เขียนให้สั้น ชัดเจน และมีโทนแบบเอดิทอเรียล</p>
+                    <div class="bio reveal delay-1" id="aboutBio">
+                        <!-- Populated from config.js for fast client delivery -->
                     </div>
                 </div>
             </div>
         </div>
+        <a href="#about-clients" class="scroll-hint about-scroll-hint" aria-label="Scroll to clients">
+            <span class="scroll-hint__kicker">View Clients</span>
+            <span class="scroll-hint__count">Frame A02</span>
+        </a>
     </section>
 
-    <section class="container" style="background: var(--surface);">
-        <div style="grid-column: span 12; padding: 96px 0;">
-            <h2 class="reveal" style="font-size: 20px; letter-spacing: 0.4em; text-align: center;">
+    <section id="about-clients" class="container motion-study-clients motion-study-clients--about">
+        <div class="motion-study-clients__inner">
+            <div class="motion-study-clients__meta reveal" aria-hidden="true">Client Index / 005</div>
+            <h2 class="reveal motion-study-clients__heading">
                 <span lang="en">Clients</span>
                 <span lang="th">ลูกค้าที่ร่วมงาน</span>
             </h2>
-            <div class="reveal delay-1" style="display: flex; justify-content: center; align-items: center; font-family: var(--serif); font-size: 24px; opacity: 0.6; flex-wrap: wrap; gap: 128px;">
-                <img src="image/brand_icons/vogue.webp" alt="VOGUE" class="brand-logo" style="height: 30px; width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                <img src="image/brand_icons/elle.webp" alt="ELLE" class="brand-logo" style="height: 30px; width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                <img src="image/brand_icons/cartier.webp" alt="CARTIER" class="brand-logo" style="height: 30px; width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                <img src="image/brand_icons/armani.webp" alt="ARMANI" class="brand-logo" style="height: 30px; width: auto; object-fit: contain;" loading="lazy" decoding="async">
-                <img src="image/brand_icons/levi.webp" alt="LEVI'S" class="brand-logo" style="height: 30px; width: auto; object-fit: contain;" loading="lazy" decoding="async">
+            <div class="reveal delay-1 motion-study-clients__row">
+                <img src="image/brand_icons/vogue.webp" alt="VOGUE" class="brand-logo" loading="lazy" decoding="async">
+                <img src="image/brand_icons/elle.webp" alt="ELLE" class="brand-logo" loading="lazy" decoding="async">
+                <img src="image/brand_icons/cartier.webp" alt="CARTIER" class="brand-logo" loading="lazy" decoding="async">
+                <img src="image/brand_icons/armani.webp" alt="ARMANI" class="brand-logo" loading="lazy" decoding="async">
+                <img src="image/brand_icons/levi.webp" alt="LEVI'S" class="brand-logo" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
 
-    <section class="container" style="padding-bottom: 160px;">
+    <section class="container motion-study-manifesto-section">
         <div style="grid-column: span 12;">
-            <div class="reveal" style="padding: 96px; border: 1px solid #eee;">
+            <div class="reveal motion-study-manifesto">
                 <p class="editorial-quote">
-                    <span lang="en">Client manifesto placeholder. Replace with one sharp line that captures their creative presence.</span>
-                    <span lang="th">ข้อความแมนิเฟสโตตัวอย่าง แทนที่ด้วยประโยคสั้นคมที่สะท้อนตัวตนและทิศทางสร้างสรรค์ของลูกค้า</span>
+                    <span lang="en" id="manifestoEn"></span>
+                    <span lang="th" id="manifestoTh"></span>
                 </p>
             </div>
             
-            <div style="margin-top: 96px; text-align: center;">
+            <div class="motion-study-contact-prompt">
                 <h3 class="reveal">
                     <span lang="en">For bookings and inquiries</span>
                     <span lang="th">สำหรับการจองและติดต่อสอบถาม</span>

@@ -2,6 +2,13 @@
  * CLIENT CONFIGURATION
  * Update this object for each new client. Variables here automatically 
  * populate the navigation, footer, and booking page links.
+ *
+ * Fast buyer swap checklist:
+ * 1. Replace Basic Info, Roles, About copy, Manifesto, and Measurements below.
+ * 2. Replace images in the same folders using the same filenames for the fastest delivery.
+ * 3. Update compCardUrl / compCardDownloadUrl when adding a comp card image.
+ * 4. Update imageCaptions only for images that should show captions in the modal.
+ * 5. Leave optional links blank ("") to hide unavailable contact buttons automatically.
  */
 window.CLIENT_CONFIG = {
     // 1. Basic Info
@@ -13,7 +20,21 @@ window.CLIENT_CONFIG = {
     taglineTh: "นางแบบ · ครีเอทีฟไดเรกเตอร์",
     splashCaption: "Motion Study Portfolio",
 
-    // 3. Measurements
+    // 3. About Page Copy
+    aboutBioEn: [
+        "Client bio opening. Replace this with a concise statement about movement, presence, and visual direction.",
+        "Use this second line for selected campaigns, creative roles, availability, or the kind of collaborations the client is seeking.",
+        "Keep it direct, energetic, and editorial."
+    ],
+    aboutBioTh: [
+        "ย่อหน้าเปิดประวัติ แทนที่ด้วยคำแนะนำตัวที่กระชับเกี่ยวกับการเคลื่อนไหว ตัวตน และทิศทางภาพ",
+        "ใช้ย่อหน้าที่สองสำหรับแคมเปญ บทบาทสร้างสรรค์ ความพร้อมรับงาน หรือรูปแบบงานที่ต้องการร่วมงาน",
+        "เขียนให้ตรง มีพลัง และมีโทนแบบเอดิทอเรียล"
+    ],
+    manifestoEn: "Client manifesto placeholder. Replace with one sharp line that captures their motion, energy, and point of view.",
+    manifestoTh: "ตัวอย่างแมนิเฟสโตของลูกค้า แทนที่ด้วยประโยคสั้นคมที่สะท้อนการเคลื่อนไหว พลัง และมุมมองของลูกค้า",
+
+    // 4. Measurements
     measurements: {
         height: "179",
         bust: "84",
@@ -26,11 +47,11 @@ window.CLIENT_CONFIG = {
         eyesTh: "สีฟ้า"
     },
 
-    // 4. Comp Card
+    // 5. Comp Card
     compCardUrl: "", // Example: "image/Folio-Lab-Compcard Motion Study.webp" (leave blank "" to hide button)
     compCardDownloadUrl: "", // Example: "image/Folio-Lab-Compcard Motion Study.png"
 
-    // 5. Image Modal Captions
+    // 6. Image Modal Captions
     // Set showImageCaptions to false to hide captions and the caption toggle everywhere.
     // Delete or leave a specific image entry blank if that image should not show captions.
     showImageCaptions: true,
@@ -77,7 +98,7 @@ window.CLIENT_CONFIG = {
         }
     },
 
-    // 6. Links
+    // 7. Links
     instagram: "https://instagram.com/yourclient",
     line: "https://line.me/",
     whatsapp: "https://wa.me/1234567890"
