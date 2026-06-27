@@ -1377,6 +1377,10 @@ h3.reveal {
     opacity: 0.76;
 }
 
+.motion-study-subpage-hero {
+    position: relative;
+}
+
 .motion-study-subpage-hero,
 .motion-study-booking-section {
     padding-top: 112px;
@@ -1405,6 +1409,9 @@ h3.reveal {
 
 .about-scroll-hint {
     color: var(--accent);
+    bottom: calc(100% - 100svh + clamp(28px, 6vh, 64px));
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .about-scroll-hint::before {
