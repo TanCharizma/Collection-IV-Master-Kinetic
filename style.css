@@ -1734,18 +1734,23 @@ h3.reveal {
 
 @media (max-width: 768px) {
     .modal {
-        --modal-mobile-toolbar-clearance: clamp(82px, 10vh, 124px);
-        --modal-caption-height: 112px;
-        --modal-control-gap: 8px;
-        --modal-control-step: 39px;
+        --modal-mobile-toolbar-clearance: clamp(68px, 8vh, 104px);
+        --modal-mobile-gap: 8px;
+        --modal-mobile-control-height: 36px;
+        --modal-caption-height: 0px;
+        top: calc(-1 * max(24px, env(safe-area-inset-top)));
+        height: calc(100dvh + max(24px, env(safe-area-inset-top)) + max(48px, env(safe-area-inset-bottom)));
+        padding-top: max(24px, env(safe-area-inset-top));
+        padding-bottom: max(48px, env(safe-area-inset-bottom));
+        box-sizing: border-box;
     }
 
     .modal-content {
-        max-height: calc(100svh - 96px);
+        max-height: calc(100svh - 32px);
     }
 
     .modal.has-caption .modal-content {
-        max-height: calc(100svh - var(--modal-mobile-toolbar-clearance) - 56px);
+        max-height: calc(100svh - var(--modal-mobile-toolbar-clearance) - 72px);
     }
 
     .modal.is-immersive .modal-content {
@@ -1754,7 +1759,6 @@ h3.reveal {
     }
 
     #compCardModal {
-        --modal-mobile-toolbar-clearance: clamp(68px, 8vh, 104px);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1779,13 +1783,19 @@ h3.reveal {
         object-fit: contain;
     }
 
+    .comp-card-modal-note .btn-bold {
+        width: auto;
+        min-width: min(260px, calc(100vw - 72px));
+        margin: 0;
+    }
+
     .modal-caption {
         left: 16px;
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)));
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)));
         max-width: none;
-        max-height: min(24vh, 190px);
-        padding: 14px 16px;
+        max-height: min(22vh, 176px);
+        padding: 12px 14px;
     }
 
     .modal-caption__text {
@@ -1794,22 +1804,24 @@ h3.reveal {
 
     .modal-caption-toggle {
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + var(--modal-caption-height) + var(--modal-control-gap));
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)) + var(--modal-caption-height) + var(--modal-mobile-gap));
+        min-height: var(--modal-mobile-control-height);
         font-size: 9px;
         letter-spacing: 0.18em;
-        padding: 10px 12px;
+        padding: 8px 11px;
     }
 
     .modal-fullscreen-toggle {
         right: 16px;
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)) + var(--modal-caption-height) + var(--modal-control-gap) + var(--modal-control-step));
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)) + var(--modal-caption-height) + var(--modal-mobile-gap) + var(--modal-mobile-control-height) + var(--modal-mobile-gap));
+        min-height: var(--modal-mobile-control-height);
         font-size: 9px;
         letter-spacing: 0.18em;
-        padding: 10px 12px;
+        padding: 8px 11px;
     }
 
     .modal:not(.has-caption-controls) .modal-fullscreen-toggle {
-        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(10px, env(safe-area-inset-bottom)));
+        bottom: calc(var(--modal-mobile-toolbar-clearance) + max(16px, env(safe-area-inset-bottom)));
     }
 }
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'motion-study-portfolio-v39';
+const CACHE_NAME = 'motion-study-portfolio-v40';
 const ASSETS_TO_CACHE = [
     '/',
     '/index.html',
