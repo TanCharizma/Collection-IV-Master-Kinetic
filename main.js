@@ -375,7 +375,11 @@ const attachSwipeDownToClose = ({
     ignoreElement,
     allowHorizontalSwipe = false,
     onHorizontalSwipe,
-    getDragCenterY = () => '-50%'
+    getDragCenterY = () => '-50%',
+    getRestTransform = () => `translate(-50%, ${getDragCenterY()})`,
+    getVerticalDragTransform = (dragY, scale) => `translate(-50%, calc(${getDragCenterY()} + ${dragY * 0.72}px)) scale(${scale})`,
+    getDismissTransform = () => 'translate(-50%, 35%) scale(0.96)',
+    getHorizontalDragTransform = (deltaX) => `translate(calc(-50% + ${deltaX * 0.6}px), ${getDragCenterY()})`
 }) => {
     if (!modalElement || !dragElement) return;
 
@@ -418,13 +422,13 @@ const attachSwipeDownToClose = ({
         if (activeGesture === 'vertical') {
             const dragY = Math.max(0, deltaY);
             const scale = Math.max(0.94, 1 - dragY / 1800);
-            dragElement.style.transform = `translate(-50%, calc(${getDragCenterY()} + ${dragY * 0.72}px)) scale(${scale})`;
+            dragElement.style.transform = getVerticalDragTransform(dragY, scale);
             dragElement.style.opacity = `${Math.max(0.35, 1 - dragY / 260)}`;
             return;
         }
 
         if (allowHorizontalSwipe) {
-            dragElement.style.transform = `translate(calc(-50% + ${deltaX * 0.6}px), ${getDragCenterY()})`;
+            dragElement.style.transform = getHorizontalDragTransform(deltaX);
             dragElement.style.opacity = `${Math.max(0.3, 1 - Math.abs(deltaX) / window.innerWidth)}`;
         }
     }, { passive: false });
@@ -441,7 +445,7 @@ const attachSwipeDownToClose = ({
 
         if (wasVertical && deltaY > closeThreshold && Math.abs(deltaY) > Math.abs(deltaX)) {
             dragElement.style.transition = 'transform 0.22s ease, opacity 0.22s ease';
-            dragElement.style.transform = 'translate(-50%, 35%) scale(0.96)';
+            dragElement.style.transform = getDismissTransform();
             dragElement.style.opacity = '0';
             setTimeout(closeModal, 160);
             return;
@@ -455,7 +459,7 @@ const attachSwipeDownToClose = ({
         }
 
         dragElement.style.transition = 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease';
-        dragElement.style.transform = `translate(-50%, ${getDragCenterY()})`;
+        dragElement.style.transform = getRestTransform();
         dragElement.style.opacity = '1';
     }, { passive: true });
 };
